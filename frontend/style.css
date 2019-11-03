@@ -1,7 +1,7 @@
 .title {
     text-align: center;
     font-family: 'McLaren', cursive;
-
+    color: #021120;
 }
 
 .colorpick {
@@ -9,6 +9,7 @@
     border: none;
     background-color: rgb(221, 218, 215);
     cursor: pointer;
+    display: none;
 }
 
 .toolbar{
@@ -29,8 +30,53 @@
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
-  }
+}
+
+#preset1 {
+    background-color: #ff0000;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#preset2 {
+    background-color: #ffa500;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#preset3 {
+    background-color: #ffff00;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#preset4 {
+    background-color: #00ff00;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#preset5 {
+    background-color: #0000ff;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#preset6 {
+    background-color: #800080;
+    cursor: pointer;
+    border: 1px solid black;
+}
 
 #myCanvas {
     border: 2px solid black;
+}
+
+#multiColor {
+    cursor: pointer;
+}
+
+#currColor {
+    border: 1px solid black;
+    cursor: pointer;
 }

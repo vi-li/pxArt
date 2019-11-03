@@ -17,3 +17,4 @@ function notifyServerOfPixel(x, y, hexRGB)
     socket.emit('pixelUpdateFromClient', { 'x': x, 'y' : y, 'hexRGB' : hexRGB });
     console.log("sent server the pixel");
 }
+

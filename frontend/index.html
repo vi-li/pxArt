@@ -22,18 +22,28 @@
 
 </head>
 
-<body>
+<body style="background-color: #a67de8;">
     <h1 class = "title mb-3 mt-3">Pixel Room Canvas</h1>
     
     <p class = "toolbar mb-2">
-        Current Color: 
-        <!-- <input id = "penColor" class = "colorpick" type="color"/>  -->
-        <span class="dot"></span>
+        <b>Active Color:</b>
+        <input id = "penColor" class = "colorpick" type="color"/> 
+        <span id="currColor" class="dot"></span>
         | 
+        <span id="preset1" class="dot"></span>
+        <span id="preset2" class="dot"></span>
+        <span id="preset3" class="dot"></span>
+        <span id="preset4" class="dot"></span>
+        <span id="preset5" class="dot"></span>
+        <span id="preset6" class="dot"></span>
 
-        <img src="https://img.icons8.com/office/50/000000/rgb-circle-1.png" width="30px">
-        <button onclick="drawGrid(1);"> Show Grid </button>
-        <button onclick="drawGrid(0);"> Hide Grid </button>   
+
+        <img id="multiColor" src="https://img.icons8.com/office/50/000000/rgb-circle-1.png" width="30px">
+        <!-- <button onclick="drawGrid(1);"> Show Grid </button>
+        <button onclick="drawGrid(0);"> Hide Grid </button>    -->
+        <button id="toggleGridBut" type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="toggleGrid">
+            Toggle Grid
+        </button>
     </p>
 
     <div class = "canvasDiv">
@@ -41,5 +51,6 @@
     </div>
 
     <script src="canvas.js"></script>
+    <script> drawGrid(1)</script>
 </body>
 </html>
