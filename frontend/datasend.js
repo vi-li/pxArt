@@ -15,10 +15,16 @@ function updateBoardFromServer(data)
 {
     JSONboard = data;
     console.log(JSONboard);
+    colorPixelFromArray();
 }
 
 function notifyServerOfBoard()
 {
     socket.emit('boardUpdateFromClient', JSONboard);
     console.log("sent server the board");
+}
+
+function notifyServerOfPixel(x, y, hexRGB)
+{
+    socket.emit('pixelUpdateFromClient', { 'x': x, 'y' : y, 'hexRGB' : hexRGB });
 }

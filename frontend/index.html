@@ -1,18 +1,56 @@
+<!doctype html>
 <html>
 <head>
-    <title>Pixel Art</title>
+    <title>Pixel Room</title>
 
-    <meta charset="utf-8"/>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-
     <script src="datasend.js"></script>
-
 </head>
 
 <body>
-    <button id="button-update-board" onclick="notifyServerOfBoard()">click me to update board</button>
-</body>
+    <h1 class = "title"><u>Pixel Room Canvas</u></h1>
+    <style>
+        .title{
+            text-align: center;
+            }
+    </style>
+    <p class = "toolbar">
+        <input id = "penColor" class = "colorpick" type="color"/>
+        <style>
+            .colorpick {
+                width: 10%;
+                border: none;
+                background-color: rgb(221, 218, 215);
+                cursor: pointer;
+                }
+            .toolbar{
+                margin: auto;
+                width: 500px;
+            }
+        </style>
+            <button onclick="drawGrid(1);"> Show Grid </button>
+            <button onclick="drawGrid(2);"> Hide Grid </button>   
+    </p>
 
+    <div class = "canvasDiv">
+        <canvas id="myCanvas" class = "canvas_prop" width="500" height="500">
+        </canvas>
+    </div>
+
+    <style>
+        .canvasDiv{
+            margin: auto;
+            width: 500px;
+            vertical-align: middle;
+        }
+    </style>
+
+    <script src="canvas.js"></script>
+    <button id="button-update-board" onclick="notifyServerOfBoard()">click me to update board</button>
+    <button id="button-update-canvas" onclick="colorPixelFromArray()">update canvas</button>
+</body>
 </html>
