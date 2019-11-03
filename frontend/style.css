@@ -1,7 +1,7 @@
 .title {
     text-align: center;
-    font-family: 'McLaren', cursive;
-    color: #021120;
+    font-family: 'Bitter', serif;
+    color: #99aab5;
 }
 
 .colorpick {
@@ -79,4 +79,13 @@
 #currColor {
     border: 1px solid black;
     cursor: pointer;
+}
+
+.btn {
+    font-family: 'Bitter', serif;
+    padding: .300rem .6rem;
+}
+
+.btn-text {
+    color: #99aab5;
 }

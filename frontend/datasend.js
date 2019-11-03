@@ -18,3 +18,7 @@ function notifyServerOfPixel(x, y, hexRGB)
     console.log("sent server the pixel");
 }
 
+function clearBoard() {
+    socket.emit('clearBoard', {});
+}
+
