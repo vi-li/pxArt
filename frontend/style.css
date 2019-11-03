@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+}
+
+.colorpick {
+    width: 10%;
+    border: none;
+    background-color: rgb(221, 218, 215);
+    cursor: pointer;
+}
+
+.toolbar{
+    margin: auto;
+    width: 500px;
+}
+
+.canvasDiv {
+    margin: auto;
+    width: 500px;
+    vertical-align: middle;
+}
