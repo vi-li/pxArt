@@ -1,5 +1,7 @@
 .title {
     text-align: center;
+    font-family: 'McLaren', cursive;
+
 }
 
 .colorpick {
@@ -18,4 +20,17 @@
     margin: auto;
     width: 500px;
     vertical-align: middle;
+}
+
+.dot {
+    height: 30px;
+    width: 30px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+#myCanvas {
+    border: 2px solid black;
 }
