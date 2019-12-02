@@ -43,7 +43,7 @@ var currColor = "#000000";
 
 currColorEle.style.backgroundColor = currColor;
 
-document.getElementById("multiColor").style.backgroundImage = "/images/rainbowcircle.png";
+document.getElementById("multiColor").style.backgroundImage = "url('https://img.icons8.com/office/50/000000/rgb-circle-1.png')";
 document.getElementById("multiColor").style.backgroundSize = "100%";
 
 // END OF SET UP
@@ -176,18 +176,14 @@ function getPosition(event) {
 function updateCurrColor(jscolor) {
     currColor = '#' + jscolor;
     currColorEle.style.backgroundColor = currColor;
-    document.getElementById("multiColor").style.backgroundImage = "/images/rainbowcircle.png";
+    document.getElementById("multiColor").style.backgroundImage = "url('https://img.icons8.com/office/50/000000/rgb-circle-1.png')";
     document.getElementById("multiColor").style.backgroundSize = "100%";
 }
 
 function updateFromPreset(presetID) {
-    console.log("updating from preset");
     currColor = document.getElementById(presetID).style.backgroundColor;
-    console.log(currColor);
     currColorEle.style.backgroundColor = currColor;
 }
-
-
 
 // Resizing maybe for another time. :(
 
