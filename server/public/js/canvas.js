@@ -163,7 +163,9 @@ function updateCurrColor(jscolor) {
 }
 
 function updateFromPreset(presetID) {
-    currColor = document.getElementById(presetID).style.backgroundColor;
+    console.log("updating from preset");
+    currColor = document.getElementById(presetID).backgroundColor;
+    console.log(currColor);
     currColorEle.style.backgroundColor = currColor;
 
     // if (presetID == "preset1") {
