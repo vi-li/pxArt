@@ -70,11 +70,6 @@ body {
     position: fixed;
 }
 
-#myCanvas {
-    width: 300px;
-    height: 300px;
-}
-
 #preset1 {
     background-color: #ff0000;
     cursor: pointer;
