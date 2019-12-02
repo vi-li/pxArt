@@ -18,12 +18,6 @@ document.getElementById('preset5').onclick = function() {
 document.getElementById('preset6').onclick = function() {
     updateFromPreset('preset6');
 }
-document.getElementById('preset7').onclick = function() {
-    updateFromPreset('preset7');
-}
-document.getElementById('preset8').onclick = function() {
-    updateFromPreset('preset8');
-}
 
 document.getElementById('toggleGridBut').onclick = function() {
     toggleGrid();
@@ -110,7 +104,6 @@ function updateBoardFromServer(data)
 {
     JSONboard = data;
     console.log(JSONboard);
-    console.log("gonna call colorPixelFromArray");
     colorPixelFromArray(data);
 }
 
@@ -162,18 +155,15 @@ function getPosition(event) {
     }
 }
 
-function updateCurrColor(event) {
-    currColor = document.getElementById("penColor").value;
+function updateCurrColor(jscolor) {
+    currColor = '#' + jscolor;
     currColorEle.style.backgroundColor = currColor;
     console.log(currColor);
 }
 
 function updateFromPreset(presetID) {
-    let color = document.getElementById(presetID).style.backgroundColor;
-    currColor = color;
-    currColorEle.style.backgroundColor = color;
-
-    color = document.getElementById(presetID).backgroundColor;
+    currColor = document.getElementById(presetID).style.backgroundColor;
+    currColorEle.style.backgroundColor = currColor;
 
     // if (presetID == "preset1") {
     //     color = "#ff0000";
@@ -198,22 +188,11 @@ function updateFromPreset(presetID) {
     // if (presetID == "preset6") {
     //     color = "#800080";
     // }
-
-    // if (presetID == "preset5") {
-    //     color = "#ffffff";
-    // }
-
-    // if (presetID == "preset6") {
-    //     color = "#000000";
-    // }
-
-    currColor = color;
-    currColorEle.style.backgroundColor = color;
 }
 
 
 
-// Resizing maybe for another time. :()
+// Resizing maybe for another time. :(
 
 // function canvasResize() {
 //     var responsiveCanvas = document.getElementById('myCanvas');
@@ -235,8 +214,6 @@ function updateFromPreset(presetID) {
 
 //     console.log("changed height");
 // }
-
-
 
 
 

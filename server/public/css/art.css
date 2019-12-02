@@ -11,10 +11,10 @@
 }
 
 .colorpick {
-    width: 10%;
+    /* width: 10%;
     border: none;
     background-color: rgb(221, 218, 215);
-    cursor: pointer;
+    cursor: pointer; */
     display: none;
 }
 
@@ -38,7 +38,7 @@
     height: 30px;
     width: 30px;
     background-color: #bbb;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     display: inline-block;
     vertical-align: middle;
 }
@@ -99,18 +99,6 @@ canvas {
 
 #preset6 {
     background-color: #800080;
-    cursor: pointer;
-    border: 1px solid black;
-}
-
-#preset7 {
-    background-color: #ffffff;
-    cursor: pointer;
-    border: 1px solid black;
-}
-
-#preset8 {
-    background-color: #000000;
     cursor: pointer;
     border: 1px solid black;
 }
