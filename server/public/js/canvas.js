@@ -156,9 +156,10 @@ function getPosition(event) {
 }
 
 function updateCurrColor(jscolor) {
+    console.log("Updating COLOR!!");
     currColor = '#' + jscolor;
     currColorEle.style.backgroundColor = currColor;
-    console.log(currColor);
+    console.log("HEY COLOR " + currColor);
 }
 
 function updateFromPreset(presetID) {
@@ -225,5 +226,5 @@ document.getElementById('multiColor').onclick = function () {
     document.getElementById('penColor').click();
 }
 
-document.getElementById("penColor").addEventListener("change", updateCurrColor, false);
+//document.getElementById("penColor").addEventListener("change", updateCurrColor, false);
 
