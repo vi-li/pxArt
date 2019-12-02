@@ -23,7 +23,7 @@ socket.on('createRoomSuccess', function (data) {
     console.log("create room success");
     
     successMsg.innerText = "Room creation success!";
-    inviteURL.href = websiteDomain + data.roomName;
+    inviteURL.href = data.roomName;
     inviteURL.innerText = websiteDomain + data.roomName;
     invitePhrase.hidden = false;
     inviteDiv.hidden = false;
