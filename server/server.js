@@ -135,11 +135,14 @@ io.on('connection', function (socket) {
 
 		var currBoard = roomBoards.get(data.roomName);
 
-		if (currBoard != null) {
+		if (currBoard != null && currBoard.canvasRGB != null 
+							  && currBoard.canvasRGB.board != null) {
+
 			currBoard.canvasRGB.board[data.x][data.y] = data.hexRGB;
 			roomBoards.set(data.roomName, currBoard);
 			
 			boardUpdateFromServer(socket, currBoard, data.roomName);
+
 		} else {
 			socket.emit('bootToHome');
 		}

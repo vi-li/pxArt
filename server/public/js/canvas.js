@@ -145,10 +145,15 @@ function getPosition(event) {
     cx = Math.floor(x / (ctx.canvas.width / LENGTH_BOXES));
     cy = Math.floor(y / (ctx.canvas.width / LENGTH_BOXES));
 
-    var hexRGB = currColor;
+    if (cx >= 0 && cx < WIDTH_BOXES &&
+        cy >= 0 && cy < HEIGHT_BOXES) {
+        var hexRGB = currColor;
 
-    console.log(roomName);
-    notifyServerOfPixel(cx, cy, hexRGB, roomName);
+        console.log(roomName);
+        notifyServerOfPixel(cx, cy, hexRGB, roomName);
+    } else {
+        console.log("tried to change pixel outside of canvas");
+    }
 }
 
 function updateCurrColor(event) {
