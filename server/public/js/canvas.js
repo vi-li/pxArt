@@ -19,6 +19,14 @@ document.getElementById('preset6').onclick = function() {
     updateFromPreset('preset6');
 }
 
+document.getElementById('preset1').style.backgroundColor = 'red';
+document.getElementById('preset2').style.backgroundColor = 'orange';
+document.getElementById('preset3').style.backgroundColor = 'yellow';
+document.getElementById('preset4').style.backgroundColor = 'green';
+document.getElementById('preset5').style.backgroundColor = 'blue';
+document.getElementById('preset6').style.backgroundColor = 'purple';
+
+
 document.getElementById('toggleGridBut').onclick = function() {
     toggleGrid();
 }
@@ -26,7 +34,6 @@ document.getElementById('toggleGridBut').onclick = function() {
 var roomName = window.location.pathname.substr(1, window.location.pathname.length - 1);
 var roomHeader = document.getElementById("roomName");
 roomHeader.innerText = roomName;
-// canvasResize();
 
 var HEIGHT_BOXES = 10;
 var LENGTH_BOXES = 10;
@@ -164,7 +171,7 @@ function updateCurrColor(jscolor) {
 
 function updateFromPreset(presetID) {
     console.log("updating from preset");
-    currColor = document.getElementById(presetID).backgroundColor;
+    currColor = document.getElementById(presetID).style.backgroundColor;
     console.log(currColor);
     currColorEle.style.backgroundColor = currColor;
 
