@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:1234');
+var socket = io.connect("pxArt.us:1234");
 
 var roomName = window.location.pathname.substr(1, window.location.pathname.length - 1);
 joinRoom(roomName);
