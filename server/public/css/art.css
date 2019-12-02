@@ -52,6 +52,13 @@
     color: #99aab5;
 }
 
+.multi-btn {
+    height: 30px;
+    width: 30px;  
+    background-image:url("https://img.icons8.com/office/50/000000/rgb-circle-1.png");
+    background-repeat:no-repeat;
+}
+
 html {
     height: 100%;
 }

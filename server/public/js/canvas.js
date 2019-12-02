@@ -223,7 +223,7 @@ function updateFromPreset(presetID) {
 
 
 document.getElementById('multiColor').onclick = function () {
-    document.getElementById('penColor').click();
+    //document.getElementById('penColor').click();
 }
 
 //document.getElementById("penColor").addEventListener("change", updateCurrColor, false);
