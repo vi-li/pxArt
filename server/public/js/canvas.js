@@ -163,10 +163,9 @@ function getPosition(event) {
 }
 
 function updateCurrColor(jscolor) {
-    console.log("Updating COLOR!!");
     currColor = '#' + jscolor;
     currColorEle.style.backgroundColor = currColor;
-    console.log("HEY COLOR " + currColor);
+    document.getElementById("multiColor").style.backgroundImage = url('https://img.icons8.com/office/50/000000/rgb-circle-1.png');
 }
 
 function updateFromPreset(presetID) {

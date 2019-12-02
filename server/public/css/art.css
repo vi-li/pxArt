@@ -37,7 +37,6 @@
 .dot {
     height: 30px;
     width: 30px;
-    /* background-color: #bbb; */
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
@@ -54,10 +53,8 @@
 
 .multi-btn {
     height: 30px;
-    width: 30px;  
-    background-image:url("https://img.icons8.com/office/50/000000/rgb-circle-1.png");
+    width: 30px;
     background-repeat:no-repeat;
-    background-size: 100%;
 }
 
 html {
