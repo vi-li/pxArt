@@ -32,7 +32,7 @@ app.use(express.static('public'));
 var BOARD_WIDTH = 10;
 var roomBoards = new Map();
 
-server.listen(1234);
+server.listen(80);
 console.log("Listening...");
 
 app.get('/', function (req, res) {
