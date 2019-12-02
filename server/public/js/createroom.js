@@ -1,5 +1,5 @@
 var socket = io.connect('http://localhost:1234');
-var websiteDomain = "pxArt.it/";
+var websiteDomain = "pxArt.us/";
 
 var successMsg = document.getElementById("success-msg");
 var inviteURL = document.getElementById("invite-url");
