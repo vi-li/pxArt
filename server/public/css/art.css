@@ -103,6 +103,18 @@ canvas {
     border: 1px solid black;
 }
 
+#preset7 {
+    background-color: #ffffff;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#preset8 {
+    background-color: #000000;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
 #myCanvas {
     border: 0px solid black;
     width: 300px;

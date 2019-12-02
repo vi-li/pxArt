@@ -18,6 +18,12 @@ document.getElementById('preset5').onclick = function() {
 document.getElementById('preset6').onclick = function() {
     updateFromPreset('preset6');
 }
+document.getElementById('preset7').onclick = function() {
+    updateFromPreset('preset7');
+}
+document.getElementById('preset8').onclick = function() {
+    updateFromPreset('preset8');
+}
 
 document.getElementById('toggleGridBut').onclick = function() {
     toggleGrid();
@@ -167,33 +173,42 @@ function updateFromPreset(presetID) {
     currColor = color;
     currColorEle.style.backgroundColor = color;
 
-    if (presetID == "preset1") {
-        color = "#ff0000";
-    }
+    color = document.getElementById(presetID).backgroundColor;
 
-    if (presetID == "preset2") {
-        color = "#ffa500";
-    }
+    // if (presetID == "preset1") {
+    //     color = "#ff0000";
+    // }
 
-    if (presetID == "preset3") {
-        color = "#ffff00";
-    }
+    // if (presetID == "preset2") {
+    //     color = "#ffa500";
+    // }
 
-    if (presetID == "preset4") {
-        color = "#00ff00";
-    }
+    // if (presetID == "preset3") {
+    //     color = "#ffff00";
+    // }
 
-    if (presetID == "preset5") {
-        color = "#0000ff";
-    }
+    // if (presetID == "preset4") {
+    //     color = "#00ff00";
+    // }
 
-    if (presetID == "preset6") {
-        color = "#800080";
-    }
+    // if (presetID == "preset5") {
+    //     color = "#0000ff";
+    // }
+
+    // if (presetID == "preset6") {
+    //     color = "#800080";
+    // }
+
+    // if (presetID == "preset5") {
+    //     color = "#ffffff";
+    // }
+
+    // if (presetID == "preset6") {
+    //     color = "#000000";
+    // }
 
     currColor = color;
     currColorEle.style.backgroundColor = color;
-
 }
 
 
