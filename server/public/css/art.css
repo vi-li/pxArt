@@ -4,6 +4,12 @@
     color: #99aab5;
 }
 
+.paragraph {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #718591;
+}
+
 .colorpick {
     width: 10%;
     border: none;
@@ -14,13 +20,18 @@
 
 .toolbar{
     margin: auto;
-    width: 500px;
+    min-width: 50%;
+    max-width: 100%;
+    text-align: center;
 }
 
 .canvasDiv {
     margin: auto;
-    width: 500px;
+    height: auto;
+    min-width: 50%;
+    max-width: 100%;
     vertical-align: middle;
+    text-align: center;
 }
 
 .dot {
@@ -30,6 +41,30 @@
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
+}
+
+.btn {
+    font-family: 'Bitter', serif;
+    padding: .300rem .6rem;
+}
+
+.btn-text {
+    color: #99aab5;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+}
+
+canvas {
+    width: 300px;
+    height: 300px;
 }
 
 #preset1 {
@@ -69,7 +104,8 @@
 }
 
 #myCanvas {
-    border: 2px solid black;
+    border: 0px solid black;
+    width: 300px;
 }
 
 #multiColor {
@@ -79,13 +115,4 @@
 #currColor {
     border: 1px solid black;
     cursor: pointer;
-}
-
-.btn {
-    font-family: 'Bitter', serif;
-    padding: .300rem .6rem;
-}
-
-.btn-text {
-    color: #99aab5;
 }

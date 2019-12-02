@@ -1,0 +1,94 @@
+.title {
+    text-align: center;
+    font-family: 'Bitter', serif;
+    color: #99aab5;
+}
+
+.paragraph {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #718591;
+}
+
+.paragraph-link {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #82b2ff;
+}
+
+.outside{
+    position:relative;
+}
+
+.inside{
+    position:absolute;
+    top:50%;
+    bottom:50%;
+    transform:translate(-50%, -50%);
+}
+
+.btn {
+    font-family: 'Bitter', serif;
+    padding: .300rem .6rem;
+}
+
+.btn-text {
+    color: #99aab5;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+}
+
+svg {
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+input {
+  border-width: 0px;
+  border: none;
+  z-index: 1;
+  height: 35px;
+  font-size: 13pt;
+  padding-left: 10px;
+}
+
+input:focus {
+    outline:none;
+}
+
+#logo {
+    max-width: 100%;
+    height: auto;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #b3cfff;
+    opacity: 1; /* Firefox */
+}
+    
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #b3cfff;
+}
+    
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #b3cfff;
+}

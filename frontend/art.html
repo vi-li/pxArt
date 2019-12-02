@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <title>pxArt Room</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="/js/client.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/css/art.css"></link>
+
+</head>
+
+<body onresize="canvasResize()" style="background-color: #2c2f33;">
+    <h1 id="roomName" class="title mb-3 mt-3" style="min-width:50%;">Pixel Room Canvas</h1>
+    
+    <p class="toolbar mb-2" style="color: #99aab5;">
+        <b>Active Color:</b>
+        <input id = "penColor" class = "colorpick" type="color"/> 
+        <span id="currColor" class="dot"></span>
+        <b style = "font-size: 25px">|</b> 
+        <span id="preset1" class="dot"></span>
+        <span id="preset2" class="dot"></span>
+        <span id="preset3" class="dot"></span>
+        <span id="preset4" class="dot"></span>
+        <span id="preset5" class="dot"></span>
+        <span id="preset6" class="dot"></span>
+
+
+        <img id="multiColor" src="https://img.icons8.com/office/50/000000/rgb-circle-1.png" width="30px">
+        <!-- <button onclick="drawGrid(1);"> Show Grid </button>
+        <button onclick="drawGrid(0);"> Hide Grid </button>    -->
+        <button id="toggleGridBut" type="button" class="btn btn-dark btn-text" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Toggle Grid
+        </button>
+    </p>
+
+    <div class = "canvasDiv" id="canvasDiv">
+        <canvas id="myCanvas" width="300px" height="300px"></canvas>
+    </div>
+
+    <script src="/js/canvas.js"></script>
+    <script> drawGrid(); </script>
+</body>
+</html>
