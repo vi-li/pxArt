@@ -166,7 +166,7 @@ function updateCurrColor(jscolor) {
     currColor = '#' + jscolor;
     currColorEle.style.backgroundColor = currColor;
     document.getElementById("multiColor").style.backgroundImage = "url('https://img.icons8.com/office/50/000000/rgb-circle-1.png')";
-    document.getElementById("multiColor").style.backgroundSize = 100%;
+    document.getElementById("multiColor").style.backgroundSize = "100%";
 }
 
 function updateFromPreset(presetID) {
