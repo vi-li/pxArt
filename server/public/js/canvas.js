@@ -43,6 +43,17 @@ var currColor = "#000000";
 
 currColorEle.style.backgroundColor = currColor;
 
+document.getElementById("multiColor").style.backgroundImage = "/images/rainbowcircle.png";
+document.getElementById("multiColor").style.backgroundSize = "100%";
+
+// END OF SET UP
+/******************************************************************************************** */
+
+
+// *********************************
+// * SOCKET EVENTS
+// *********************************
+
 socket.on('boardUpdateFromServer', function (data) {
     console.log("received new board!");
     updateBoardFromServer(data);
@@ -165,7 +176,7 @@ function getPosition(event) {
 function updateCurrColor(jscolor) {
     currColor = '#' + jscolor;
     currColorEle.style.backgroundColor = currColor;
-    document.getElementById("multiColor").style.backgroundImage = "url('https://img.icons8.com/office/50/000000/rgb-circle-1.png')";
+    document.getElementById("multiColor").style.backgroundImage = "/images/rainbowcircle.png";
     document.getElementById("multiColor").style.backgroundSize = "100%";
 }
 
@@ -174,30 +185,6 @@ function updateFromPreset(presetID) {
     currColor = document.getElementById(presetID).style.backgroundColor;
     console.log(currColor);
     currColorEle.style.backgroundColor = currColor;
-
-    // if (presetID == "preset1") {
-    //     color = "#ff0000";
-    // }
-
-    // if (presetID == "preset2") {
-    //     color = "#ffa500";
-    // }
-
-    // if (presetID == "preset3") {
-    //     color = "#ffff00";
-    // }
-
-    // if (presetID == "preset4") {
-    //     color = "#00ff00";
-    // }
-
-    // if (presetID == "preset5") {
-    //     color = "#0000ff";
-    // }
-
-    // if (presetID == "preset6") {
-    //     color = "#800080";
-    // }
 }
 
 
@@ -224,16 +211,4 @@ function updateFromPreset(presetID) {
 
 //     console.log("changed height");
 // }
-
-
-
-
-
-
-
-document.getElementById('multiColor').onclick = function () {
-    //document.getElementById('penColor').click();
-}
-
-//document.getElementById("penColor").addEventListener("change", updateCurrColor, false);
 
