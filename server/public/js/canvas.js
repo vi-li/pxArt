@@ -145,8 +145,8 @@ function getPosition(event) {
     cx = Math.floor(x / (ctx.canvas.width / LENGTH_BOXES));
     cy = Math.floor(y / (ctx.canvas.width / LENGTH_BOXES));
 
-    if (cx >= 0 && cx < WIDTH_BOXES &&
-        cy >= 0 && cy < HEIGHT_BOXES) {
+    if (cx >= 0 && cx < LENGTH_BOXES &&
+        cy >= 0 && cy < LENGTH_BOXES) {
         var hexRGB = currColor;
 
         console.log(roomName);
