@@ -30,6 +30,7 @@
 .btn {
     font-family: 'Bitter', serif;
     padding: .300rem .6rem;
+    vertical-align: top;
 }
 
 .btn-text {

@@ -31,10 +31,12 @@ document.getElementById('toggleGridBut').onclick = function() {
     toggleGrid();
 }
 
+// Room name setup
 var roomName = window.location.pathname.substr(1, window.location.pathname.length - 1);
 var roomHeader = document.getElementById("roomName");
 roomHeader.innerText = roomName;
 
+// Canvas and toolbar setup
 var HEIGHT_BOXES = 15;
 var LENGTH_BOXES = 15;
 var heightRatio = HEIGHT_BOXES / LENGTH_BOXES;

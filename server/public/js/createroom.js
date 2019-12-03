@@ -7,6 +7,8 @@ var invitePhrase = document.getElementById("invite-phrase");
 var inviteDiv = document.getElementById("invite-div");
 var roomNameInput = document.getElementById("roomNameInput");
 
+var roomDuration = "30 minutes";
+
 window.addEventListener('keydown',function (e) {
     if (e.keyIdentifier == 'U+000A' || e.keyIdentifier == 'Enter' || e.keyCode == 13) {
         if (e.target.nodeName == 'INPUT' && e.target.type == 'text') {
@@ -27,7 +29,9 @@ window.addEventListener('keydown',function (e) {
 socket.on('createRoomSuccess', function (data) {
     console.log("create room success");
     
-    successMsg.innerText = "Room creation success!";
+    successMsg.innerText = "Room creation success!\nPlease note that rooms will expire after "
+                            + roomDuration
+                            + " of inactivity.";
     inviteURL.href = data.roomName;
     inviteURL.innerText = websiteDomain + data.roomName;
     invitePhrase.hidden = false;
@@ -64,7 +68,7 @@ function clientCreateRoom() {
 
     } else if (userInput.toLowerCase() != formattedInput) {
         console.log("invalid room name entered");
-        successMsg.innerText = "Invalid room name!\nPlease remove all non-alphanumeric characters.";
+        successMsg.innerText = "Invalid room name!\nPlease remove all non-alphanumeric characters. Underscores are allowed.";
         inviteURL.innerText = "";
         invitePhrase.hidden = true;
         inviteDiv.hidden = false;

@@ -32,18 +32,8 @@ socket.on('bootToHome', function (data) {
 
 function joinRoom(roomName)
 {
-    console.log("About to try to join room: " + roomName);
     socket.emit('joinRoom', { 'roomName': roomName });
-    console.log("Just sent join request.");
 }
-
-// function updateBoardFromServer(data)
-// {
-//     JSONboard = data;
-//     console.log(JSONboard);
-//     console.log("gonna call colorPixelFromArray");
-//     colorPixelFromArray(data);
-// }
 
 function notifyServerOfPixel(x, y, hexRGB, roomName)
 {
