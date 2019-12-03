@@ -29,7 +29,7 @@ window.addEventListener('keydown',function (e) {
 socket.on('createRoomSuccess', function (data) {
     console.log("create room success");
     
-    successMsg.innerText = "Room creation success!\nPlease note that rooms will expire after "
+    successMsg.innerText = "Room creation success! Please note that rooms will expire after "
                             + roomDuration
                             + " of inactivity.";
     inviteURL.href = data.roomName;
