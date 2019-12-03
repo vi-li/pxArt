@@ -24,7 +24,7 @@ document.getElementById('preset2').style.backgroundColor = 'orange';
 document.getElementById('preset3').style.backgroundColor = 'yellow';
 document.getElementById('preset4').style.backgroundColor = 'green';
 document.getElementById('preset5').style.backgroundColor = 'blue';
-document.getElementById('preset6').style.backgroundColor = 'purple';
+document.getElementById('preset6').style.backgroundColor = '#23272a';   // bg color of original canvas
 
 
 document.getElementById('toggleGridBut').onclick = function() {
