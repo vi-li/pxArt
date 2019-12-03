@@ -47,7 +47,6 @@ $(document).ready(function(){
 socket.on('createRoomSuccess', function (data) {
     console.log("create room success");
     document.getElementById("logo").style.paddingTop = "75px";
-    co
     
     successMsg.innerText = "Room creation success!\nPlease note that rooms expire after "
                             + roomDuration
