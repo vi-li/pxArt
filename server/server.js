@@ -11,7 +11,7 @@ app.use(express.static('public'));
 var BOARD_WIDTH = 15;
 var roomBoards = new Map();
 
-server.listen(1234);
+server.listen(80);
 console.log("Listening...");
 
 // END OF SET UP
