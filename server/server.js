@@ -11,7 +11,7 @@ app.use(express.static('public'));
 var BOARD_WIDTH = 15;
 var roomBoards = new Map();
 
-var ROOM_TIMEOUT_MS = 30000;
+var ROOM_TIMEOUT_MS = 1800000;
 var roomTimers = new Map();
 
 server.listen(80);
@@ -168,7 +168,7 @@ function joinRoomError(socket, data)
 // Room Timer Functionality
 function deleteRoom(roomName) 
 {
-	console.log("\ndeleting room: " + roomName + "!");
+	console.log("\ndeleting room: " + roomName);
 	roomBoards.delete(roomName);
 	roomTimers.delete(roomName);
 }
