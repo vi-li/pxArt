@@ -69,7 +69,7 @@ function drawGrid() {
     var ctx = canvas.getContext("2d");
     ctx.lineWidth = 1;
 
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = 'rbga(0, 0, 0, 50)';
 
     for (var i = 0; i <= LENGTH_BOXES; i++) {
         ctx.moveTo(((i*(ctx.canvas.width / LENGTH_BOXES))), 0);
