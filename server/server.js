@@ -8,7 +8,7 @@ var io = require('socket.io').listen(server);
 
 app.use(express.static('public'));
 
-var BOARD_WIDTH = 10;
+var BOARD_WIDTH = 15;
 var roomBoards = new Map();
 
 server.listen(1234);
