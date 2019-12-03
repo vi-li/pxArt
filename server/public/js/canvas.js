@@ -35,8 +35,8 @@ var roomName = window.location.pathname.substr(1, window.location.pathname.lengt
 var roomHeader = document.getElementById("roomName");
 roomHeader.innerText = roomName;
 
-var HEIGHT_BOXES = 10;
-var LENGTH_BOXES = 10;
+var HEIGHT_BOXES = 15;
+var LENGTH_BOXES = 15;
 var heightRatio = HEIGHT_BOXES / LENGTH_BOXES;
 var currColorEle = document.getElementById('currColor')
 var currColor = "#000000";
@@ -166,7 +166,6 @@ function getPosition(event) {
         cy >= 0 && cy < LENGTH_BOXES) {
         var hexRGB = currColor;
 
-        console.log(roomName);
         notifyServerOfPixel(cx, cy, hexRGB, roomName);
     } else {
         console.log("tried to change pixel outside of canvas");

@@ -16,8 +16,13 @@ window.addEventListener('keydown',function (e) {
     }
 }, true);
 
-console.log("set!");
+// END OF SET UP
+/******************************************************************************************** */
 
+
+// *********************************
+// * SOCKET EVENTS
+// *********************************
 
 socket.on('createRoomSuccess', function (data) {
     console.log("create room success");
@@ -40,9 +45,6 @@ socket.on('createRoomError', function (data) {
     invitePhrase.hidden = true;
     inviteDiv.hidden = false;
 });
-
-
-
 
 
 // *********************************

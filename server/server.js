@@ -8,42 +8,20 @@ var io = require('socket.io').listen(server);
 
 app.use(express.static('public'));
 
-// OLD SYSTEM WHERE EVERYONE JOINED THE SAME ROOM BY DEFAULT
-// var sockets = [];
-// var board = new Array(10)
-// var BOARD_WIDTH = 10;
-
-// // Initializing board var
-// console.log("setting up canvas");
-// for (let i = 0; i < BOARD_WIDTH; ++i)
-// {
-// 	board[i] = new Array(10)
-// }
-
-// for (let i = 0; i < BOARD_WIDTH; ++i)
-// {
-// 	for (let j = 0; j < BOARD_WIDTH; ++j) {
-// 		board[i][j] = '#FFFFFF';
-// 	}
-// }
-//
-// var JSONboard = {"canvasRGB" : { "board" : board }};
-
 var BOARD_WIDTH = 10;
 var roomBoards = new Map();
 
 server.listen(1234);
 console.log("Listening...");
 
+// END OF SET UP
+/******************************************************************************************** */
+
+
 app.get('/', function (req, res) {
 	console.log("\nuser visited homepage");
 	res.sendFile('frontend/index.html', {root: path.dirname(__dirname)});
 });
-
-// const middleware = (req, res, next) => {
-//     console.log(req.params.pathName);
-//     next();
-// };
 
 //Find join requests to url paths that are not to index
 app.get('/:pathName', function (req, res) {
@@ -64,12 +42,12 @@ app.get('/:pathName', function (req, res) {
 	}
 });
 
-io.on('connection', function (socket) {
-	console.log("!");
 
-	// OLD SYSTEM WHERE EVERYONE JOINED THE SAME ROOM BY DEFAULT
-	//sockets.push(socket);
-	//boardUpdateFromServer(socket, JSONboard);
+// *********************************
+// * SOCKET EVENTS
+// *********************************
+
+io.on('connection', function (socket) {
 
 	socket.on('joinRoom', function (data) {
 		console.log("\nclient trying to join room: " + data.roomName);

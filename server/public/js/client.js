@@ -3,12 +3,13 @@ var socket = io.connect("pxArt.us:1234");
 var roomName = window.location.pathname.substr(1, window.location.pathname.length - 1);
 joinRoom(roomName);
 
-console.log("Done");
+// END OF SET UP
+/******************************************************************************************** */
 
-// socket.on('boardUpdateFromServer', function (data) {
-//     console.log("received new board!");
-//     updateBoardFromServer(data);
-// });
+
+// *********************************
+// * SOCKET EVENTS
+// *********************************
 
 socket.on('newUserJoin', function () {
     console.log("new user joined");
