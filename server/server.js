@@ -189,7 +189,7 @@ function refreshRoomTimer(roomName)
 	var oldRoomTime = roomTimers.get(roomName);
 	clearTimeout(oldRoomTime);
 
-	var roomTime = setTimeout(function () { console.log("about to delete " + roomName);
+	var newRoomTime = setTimeout(function () { console.log("about to delete " + roomName);
 											roomBoards.delete(roomName);
 											roomTimers.delete(roomName); 
 											console.log("just deleted " + roomName);}, ROOM_TIMEOUT_MS);
