@@ -1,4 +1,4 @@
-var socket = io.connect("pxArt.us:1234");
+var socket = io.connect("pxArt.us");
 var websiteDomain = "pxArt.us/";
 
 var successMsg = document.getElementById("success-msg");
