@@ -31,7 +31,7 @@ window.addEventListener('keydown',function (e) {
 
 $(document).ready(function(){
     $("#createButton").click(function(){
-        $("#logo").animate({paddingTop: "50px"});
+        $("#logo").animate({paddingTop: "40px"});
         $("#grassImg").animate({paddingBottom: "0px"});
     });
 });
