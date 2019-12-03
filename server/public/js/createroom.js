@@ -32,7 +32,7 @@ window.addEventListener('keydown',function (e) {
 $(document).ready(function(){
     $("#createButton").click(function(){
         $("#logo").animate({paddingTop: "75px"});
-        $("grassImg").animate({paddingBottom: "0px"});
+        $("#grassImg").animate({paddingBottom: "0px"});
     });
 });
 
