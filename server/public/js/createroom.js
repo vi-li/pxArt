@@ -29,7 +29,7 @@ window.addEventListener('keydown',function (e) {
 socket.on('createRoomSuccess', function (data) {
     console.log("create room success");
     
-    successMsg.innerText = "Room creation success! Please note that rooms will expire after "
+    successMsg.innerText = "Room creation success!\nPlease note that rooms expire after "
                             + roomDuration
                             + " of inactivity.";
     inviteURL.href = data.roomName;
@@ -68,7 +68,7 @@ function clientCreateRoom() {
 
     } else if (userInput.toLowerCase() != formattedInput) {
         console.log("invalid room name entered");
-        successMsg.innerText = "Invalid room name!\nPlease remove all non-alphanumeric characters. Underscores are allowed.";
+        successMsg.innerText = "Please remove all non-alphanumeric characters. Underscores are allowed.";
         inviteURL.innerText = "";
         invitePhrase.hidden = true;
         inviteDiv.hidden = false;
