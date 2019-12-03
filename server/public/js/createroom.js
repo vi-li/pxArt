@@ -19,6 +19,7 @@ var roomNameInput = document.getElementById("roomNameInput");
 
 var roomDuration = "30 minutes";
 
+// Prevent enter key submit
 window.addEventListener('keydown',function (e) {
     if (e.keyIdentifier == 'U+000A' || e.keyIdentifier == 'Enter' || e.keyCode == 13) {
         if (e.target.nodeName == 'INPUT' && e.target.type == 'text') {
@@ -27,6 +28,13 @@ window.addEventListener('keydown',function (e) {
         }
     }
 }, true);
+
+$(document).ready(function(){
+    $("#createButton").click(function(){
+        $("#logo").animate({paddingTop: "75px"});
+        $("grassImg").animate({paddingBottom: "0px"});
+    });
+});
 
 // END OF SET UP
 /******************************************************************************************** */
@@ -39,6 +47,7 @@ window.addEventListener('keydown',function (e) {
 socket.on('createRoomSuccess', function (data) {
     console.log("create room success");
     document.getElementById("logo").style.paddingTop = "75px";
+    co
     
     successMsg.innerText = "Room creation success!\nPlease note that rooms expire after "
                             + roomDuration

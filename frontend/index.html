@@ -34,7 +34,7 @@
         <div class="middle" style="text-align:center;">
             <form id="roomNameForm">
                 <input id="roomNameInput" type="text" name="roomName" placeholder="Room Name">
-                <button type="button" class="btn btn-dark btn-text" onclick="clientCreateRoom()">Create</button>
+                <button id="createButton" type="button" class="btn btn-dark btn-text" onclick="clientCreateRoom()">Create</button>
             </form>
         </div>
     </div>
@@ -51,11 +51,12 @@
 
     <!-- Bottom earthy image -->
     <div>
-        <img src="/images/grassyearth.png" alt="grassyearth" style="position: absolute; 
+        <img id="grassImg" src="/images/grassyearth.png" alt="grassyearth" style="position: absolute; 
                                                                     bottom: 0; 
                                                                     padding-bottom: 7%;"/>
     </div>
     
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/createroom.js"></script>
 </body>
