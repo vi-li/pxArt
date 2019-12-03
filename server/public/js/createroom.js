@@ -31,7 +31,7 @@ window.addEventListener('keydown',function (e) {
 
 $(document).ready(function(){
     $("#createButton").click(function(){
-        $("#logo").animate({paddingTop: "75px"});
+        $("#logo").animate({paddingTop: "50px"});
         $("#grassImg").animate({paddingBottom: "0px"});
     });
 });
@@ -46,7 +46,6 @@ $(document).ready(function(){
 
 socket.on('createRoomSuccess', function (data) {
     console.log("create room success");
-    document.getElementById("logo").style.paddingTop = "50px";
     
     successMsg.innerText = "Room creation success!\nPlease note that rooms expire after "
                             + roomDuration
@@ -61,7 +60,6 @@ socket.on('createRoomSuccess', function (data) {
 
 socket.on('createRoomError', function (data) {
     console.log("create room error");
-    document.getElementById("logo").style.paddingTop = "75px";
     
     successMsg.innerText = "This room already exists!\nVisit it here:";
     inviteURL.href = data.roomName;
