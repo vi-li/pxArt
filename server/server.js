@@ -67,7 +67,7 @@ io.on('connection', function (socket) {
 			for (let i = 0; i < BOARD_WIDTH; ++i)
 			{
 				for (let j = 0; j < BOARD_WIDTH; ++j) {
-					board[i][j] = '#FFFFFF';
+					board[i][j] = '#23272a';
 				}
 			}
 
