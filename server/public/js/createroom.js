@@ -39,9 +39,9 @@ socket.on('createRoomSuccess', function (data) {
 socket.on('createRoomError', function (data) {
     console.log("create room error");
     
-    successMsg.innerText = "This room already exists! Try another name.";
+    successMsg.innerText = "This room already exists!\nVisit it here:";
     inviteURL.href = "#";
-    inviteURL.innerText = "";
+    inviteURL.innerText = websiteDomain + data.roomName;
     invitePhrase.hidden = true;
     inviteDiv.hidden = false;
 });
