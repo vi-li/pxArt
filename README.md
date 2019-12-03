@@ -1,5 +1,5 @@
 # pixel-art
 
-pxArt.it
+pxArt.us
 
 Community pixel art rooms!
