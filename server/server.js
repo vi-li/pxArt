@@ -168,31 +168,24 @@ function joinRoomError(socket, data)
 // Room Timer Functionality
 function deleteRoom(roomName) 
 {
-	console.log("about to delete " + roomName + "!");
+	console.log("\ndeleting room: " + roomName + "!");
 	roomBoards.delete(roomName);
 	roomTimers.delete(roomName);
-	console.log("done deleting!");
 }
 
 function startRoomTimer(roomName)
 {
-	//var roomTime = setTimeout(deleteRoom(roomName), ROOM_TIMEOUT_MS);
-	var roomTime = setTimeout(function () { console.log("about to delete " + roomName);
-											roomBoards.delete(roomName);
-											roomTimers.delete(roomName); 
-											console.log("just deleted " + roomName);}, ROOM_TIMEOUT_MS);
+	var roomTime = setTimeout(deleteRoom, ROOM_TIMEOUT_MS, roomName);
 	roomTimers.set(roomName, roomTime);
 }
 
 function refreshRoomTimer(roomName)
 {
+	// Clear old timer
 	var oldRoomTime = roomTimers.get(roomName);
 	clearTimeout(oldRoomTime);
 
-	var newRoomTime = setTimeout(function () { console.log("about to delete " + roomName);
-											roomBoards.delete(roomName);
-											roomTimers.delete(roomName); 
-											console.log("just deleted " + roomName);}, ROOM_TIMEOUT_MS);
-	//var newRoomTime = setTimeout(deleteRoom(roomName), ROOM_TIMEOUT_MS);
+	// Add new timer
+	var newRoomTime = setTimeout(deleteRoom, ROOM_TIMEOUT_MS, roomName);
 	roomTimers.set(roomName, newRoomTime);
 }
