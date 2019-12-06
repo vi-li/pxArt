@@ -128,7 +128,6 @@ function updateBoardFromServer(data)
 }
 
 function colorPixelFromArray(data) {
-    //var cArray = JSONboard.canvasRGB.board;
     var cArray = data.canvasRGB.board;
 
     var but = document.getElementById('toggleGridBut');

@@ -109,15 +109,10 @@ io.on('connection', function (socket) {
 		}
 	});
 
-	// socket.on('boardUpdateFromClient', function (data) {
-	// 	console.log("received board from client:");
-	// 	roomBoards.set(roomName, data);
-	// });
-
 	socket.on('pixelUpdateFromClient', function (data) {
 		var currBoard = roomBoards.get(data.roomName);
 
-		// Making sure no out of bounds
+		// Making sure not out of bounds
 		if (currBoard != null && currBoard.canvasRGB != null && currBoard.canvasRGB.board != null) {
 
 			console.log("received pixel from client from room: " + data.roomName);
