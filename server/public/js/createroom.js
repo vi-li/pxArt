@@ -1,5 +1,7 @@
-var socket = io.connect("pxArt.us");
-var websiteDomain = "pxArt.us/";
+const serverUrl = process.env.SOCKET_API_URL;
+
+var socket = io.connect(serverUrl);
+var websiteDomain = `${serverUrl}/`;
 
 var successMsg = document.getElementById("success-msg");
 var inviteURL = document.getElementById("invite-url");

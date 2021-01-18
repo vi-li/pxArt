@@ -1,4 +1,4 @@
-var socket = io.connect("pxArt.us");
+var socket = io.connect(process.env.SOCKET_API_URL);
 
 var roomName = window.location.pathname.substr(1, window.location.pathname.length - 1);
 joinRoom(roomName);

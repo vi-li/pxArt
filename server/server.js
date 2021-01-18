@@ -1,3 +1,6 @@
+require('dotenv').config();
+console.log(require('dotenv').config())
+
 var express = require('express')
   , http = require('http');
 
@@ -17,9 +20,9 @@ var roomTimers = new Map();
 server.listen(80);
 console.log("Listening...");
 
-// END OF SET UP
-/******************************************************************************************** */
-
+// *********************************
+// * END OF SET UP
+// *********************************
 
 app.get('/', function (req, res) {
 	console.log("\nuser visited homepage");
@@ -53,7 +56,7 @@ app.get('/:pathName', function (req, res) {
 io.on('connection', function (socket) {
 
 	socket.on('createRoom', function (data) {
-		console.log("\nclient trying to create room: " + data.roomName);
+		console.log("\nClient trying to create room: " + data.roomName);
 		if (!roomBoards.has(data.roomName)) {
 			
 			var board = new Array(BOARD_WIDTH);
