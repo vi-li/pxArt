@@ -1,12 +1,12 @@
 require('dotenv').config();
 
-var express = require('express')
-  , http = require('http');
+const express = require('express')
+const http = require('http');
+const path = require('path');
 
-var path = require('path');
 var app = express();
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
+var server = http.Server(app);
+var io = require('socket.io')(server);
 
 app.use(express.static('public'));
 
@@ -16,7 +16,7 @@ var roomBoards = new Map();
 var ROOM_TIMEOUT_MS = 1800000;
 var roomTimers = new Map();
 
-server.listen(80);
+server.listen(8080);
 console.log("Listening...");
 
 // *********************************
@@ -25,7 +25,8 @@ console.log("Listening...");
 
 app.get('/', function (req, res) {
 	console.log("\nuser visited homepage");
-	res.sendFile('frontend/index.html', {root: path.dirname(__dirname)});
+	res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+	// res.sendFile('frontend/index.html', {root: path.dirname("./")});
 });
 
 //Find join requests to url paths that are not to index
@@ -35,15 +36,18 @@ app.get('/:pathName', function (req, res) {
 	if (roomBoards.has(pathName) && pathName != 'index.html' 
 											&& pathName != 0) {
 		console.log("\nuser is viewing room: " + pathName);
-		res.sendFile('frontend/art.html', {root: path.dirname(__dirname)});
+		res.sendFile(path.join(__dirname, 'frontend', 'art.html'));
+		//res.sendFile('frontend/art.html', {root: path.dirname(__dirname)});
 
 	} else if (pathName == 'index.html') {
 		console.log("\nserving index.html to client");
-		res.sendFile('frontend/index.html', {root: path.dirname(__dirname)});
+		res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+		//res.sendFile('frontend/index.html', {root: path.dirname(__dirname)});
 
 	} else {
 		console.log("\nuser tried to join non-existing room")
-		res.sendFile('frontend/error.html', {root: path.dirname(__dirname)});
+		res.sendFile(path.join(__dirname, 'frontend', 'error.html'));
+		//res.sendFile('frontend/error.html', {root: path.dirname(__dirname)});
 	}
 });
 
@@ -53,6 +57,7 @@ app.get('/:pathName', function (req, res) {
 // *********************************
 
 io.on('connection', function (socket) {
+	console.log("a user connected")
 
 	socket.on('createRoom', function (data) {
 		console.log("\nClient trying to create room: " + data.roomName);

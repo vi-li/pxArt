@@ -1,6 +1,6 @@
-const serverUrl = process.env.SOCKET_API_URL;
+const serverUrl = "localhost";
 
-var socket = io.connect(serverUrl);
+var socket = io.connect();
 var websiteDomain = `${serverUrl}/`;
 
 var successMsg = document.getElementById("success-msg");
