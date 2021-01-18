@@ -15,9 +15,9 @@ var roomBoards = new Map();
 
 var ROOM_TIMEOUT_MS = 1800000;
 var roomTimers = new Map();
-
-server.listen(8080);
-console.log("Listening...");
+const PORT = process.env.PORT || 8080
+server.listen(PORT);
+console.log(`Listening on port ${PORT}`);
 
 // *********************************
 // * END OF SET UP
