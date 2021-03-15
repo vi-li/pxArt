@@ -13,8 +13,8 @@ var roomDuration = "30 minutes";
 
 // Prevent enter key submit
 window.addEventListener('keydown',function (e) {
-    if (e.keyIdentifier == 'U+000A' || e.keyIdentifier == 'Enter' || e.keyCode == 13) {
-        if (e.target.nodeName == 'INPUT' && e.target.type == 'text') {
+    if (e.keyIdentifier ===  'U+000A' || e.keyIdentifier === 'Enter' || e.keyCode === 13) {
+        if (e.target.nodeName === 'INPUT' && e.target.type === 'text') {
             e.preventDefault();
             return false;
         }
@@ -70,7 +70,7 @@ function clientCreateRoom() {
     var userInput = document.getElementById("roomNameInput").value;
     var formattedInput = JSON.stringify(userInput).replace(/\W/g, '').toLowerCase();
 
-    if (userInput.length == 0) {
+    if (userInput.length === 0) {
         console.log("empty room name entered");
         successMsg.innerText = "Your room name cannot be empty!";
         inviteURL.innerText = "";

@@ -39,7 +39,7 @@ var jsc = {
 		var matchClass = new RegExp('(^|\\s)(' + className + ')(\\s*(\\{[^}]*\\})|\\s|$)', 'i');
 
 		for (var i = 0; i < elms.length; i += 1) {
-			if (elms[i].type !== undefined && elms[i].type.toLowerCase() == 'color') {
+			if (elms[i].type !== undefined && elms[i].type.toLowerCase() === 'color') {
 				if (jsc.isColorAttrSupported) {
 					// skip inputs of type 'color' if supported by the browser
 					continue;
@@ -75,7 +75,7 @@ var jsc = {
 		var elm = document.createElement('input');
 		if (elm.setAttribute) {
 			elm.setAttribute('type', 'color');
-			if (elm.type.toLowerCase() == 'color') {
+			if (elm.type.toLowerCase() === 'color') {
 				return true;
 			}
 		}
@@ -183,7 +183,7 @@ var jsc = {
 			window.attachEvent('onload', fireOnce);
 
 			// IE7/8
-			if (document.documentElement.doScroll && window == window.top) {
+			if (document.documentElement.doScroll && window === window.top) {
 				var tryScroll = function () {
 					if (!document.body) { return; }
 					try {

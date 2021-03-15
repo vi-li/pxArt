@@ -39,7 +39,7 @@ app.get('/:pathName', function (req, res) {
 		res.sendFile(path.join(__dirname, 'frontend', 'art.html'));
 		//res.sendFile('frontend/art.html', {root: path.dirname(__dirname)});
 
-	} else if (pathName == 'index.html') {
+	} else if (pathName === 'index.html') {
 		console.log("\nserving index.html to client");
 		res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 		//res.sendFile('frontend/index.html', {root: path.dirname(__dirname)});
