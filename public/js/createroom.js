@@ -1,4 +1,4 @@
-const serverUrl = "pxart.us";
+const serverUrl = process.env.SERVER_URL;
 
 var socket = io.connect();
 var websiteDomain = `${serverUrl}/`;
