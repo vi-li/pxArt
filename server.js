@@ -15,9 +15,11 @@ var roomBoards = new Map();
 
 var ROOM_TIMEOUT_MS = 1800000;
 var roomTimers = new Map();
+// const HOST = '0.0.0.0' // TODO: Temporary for local testing?
 const PORT = process.env.PORT || 8080
-server.listen(PORT);
-console.log(`Listening on port ${PORT}`);
+server.listen(PORT, () => {
+	console.log(`Listening on port ${PORT}`)
+})
 
 // *********************************
 // * END OF SET UP
