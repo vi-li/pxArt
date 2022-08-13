@@ -1,4 +1,4 @@
-const serverUrl = "pixel-art-rooms.herokuapp.com";
+const serverUrl = "pxart.herokuapp.com";
 
 var socket = io.connect();
 var websiteDomain = `${serverUrl}/`;

@@ -15,7 +15,6 @@ var roomBoards = new Map();
 
 var ROOM_TIMEOUT_MS = 1800000;
 var roomTimers = new Map();
-// const HOST = '0.0.0.0' // TODO: Temporary for local testing?
 const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`)
@@ -31,7 +30,7 @@ app.get('/', function (req, res) {
 	// res.sendFile('frontend/index.html', {root: path.dirname("./")});
 });
 
-//Find join requests to url paths that are not to index
+// Find join requests to url paths that are not to index
 app.get('/:pathName', function (req, res) {
 	var pathName = req.params.pathName;
 
@@ -39,17 +38,14 @@ app.get('/:pathName', function (req, res) {
 											&& pathName != 0) {
 		console.log("\nuser is viewing room: " + pathName);
 		res.sendFile(path.join(__dirname, 'frontend', 'art.html'));
-		//res.sendFile('frontend/art.html', {root: path.dirname(__dirname)});
 
 	} else if (pathName === 'index.html') {
 		console.log("\nserving index.html to client");
 		res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
-		//res.sendFile('frontend/index.html', {root: path.dirname(__dirname)});
 
 	} else {
 		console.log("\nuser tried to join non-existing room")
 		res.sendFile(path.join(__dirname, 'frontend', 'error.html'));
-		//res.sendFile('frontend/error.html', {root: path.dirname(__dirname)});
 	}
 });
 
