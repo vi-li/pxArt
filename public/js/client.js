@@ -12,7 +12,7 @@ joinRoom(roomName);
 // *********************************
 
 socket.on('newUserJoin', function () {
-    console.log("new user joined room: " + data.roomName);
+    console.log("new user joined room");
 });
 
 socket.on('joinRoomError', function (data) {
