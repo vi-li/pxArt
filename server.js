@@ -1,8 +1,14 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+	require('dotenv').config();
+}
 
-const express = require('express')
+const express = require('express');
 const http = require('http');
 const path = require('path');
+const passport = require('passport');
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, SESSION_SECRET } =  process.env;
 
 var app = express();
 var server = http.Server(app);
@@ -10,15 +16,28 @@ var io = require('socket.io')(server);
 
 app.use(express.static('public'));
 
+// ROOM AND BOARD SETUP
 var BOARD_WIDTH = 15;
 var roomBoards = new Map();
-
 var ROOM_TIMEOUT_MS = 1800000;
 var roomTimers = new Map();
+
 const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`)
 })
+
+passport.use(new GoogleStrategy({
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackURL: "/return"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
 
 // *********************************
 // * END OF SET UP
@@ -28,6 +47,18 @@ app.get('/', function (req, res) {
 	console.log("\nuser visited homepage");
 	res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 	// res.sendFile('frontend/index.html', {root: path.dirname("./")});
+});
+
+app.get('/auth/google', function (req, res) {
+	console.log("\nuser visited auth google page");
+	passport.authenticate('google', { scope: ['profile'] });
+});
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
 });
 
 // Find join requests to url paths that are not to index
@@ -96,8 +127,9 @@ io.on('connection', function (socket) {
 		// Checking if room has been created already
 		if (roomBoards.has(roomName) && roomName != 'index.html' && roomName.length != 0) {
 			
+			// Leave all other rooms
 			var joinedRooms = io.sockets.adapter.sids[socket.id];
-			for(var room in joinedRooms) { socket.leave(room); }
+			for (var room in joinedRooms) { socket.leave(room); }
 
 			socket.join(roomName);
 			console.log("successfully joined room!");

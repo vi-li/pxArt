@@ -1,6 +1,7 @@
 var socket = io.connect();
 
 var roomName = window.location.pathname.substr(1, window.location.pathname.length - 1);
+console.log(roomName);
 joinRoom(roomName);
 
 // END OF SET UP
@@ -12,19 +13,18 @@ joinRoom(roomName);
 // *********************************
 
 socket.on('newUserJoin', function () {
-    console.log("new user joined room");
+    console.log("new user joined room: " + roomName);
 });
 
-socket.on('joinRoomError', function (data) {
+socket.on('joinRoomError', function () {
     console.log("join room error");
-    alert("Room \"" + data.roomName + "\" does not exist!\nCreate a new room from the homepage.");
+    alert("Room \"" + roomName + "\" does not exist!\nCreate a new room from the homepage.");
 });
 
-socket.on('bootToHome', function (data) {
+socket.on('bootToHome', function () {
     console.log("error occurred, booting to home");
     window.location.href = '/';
 });
-
 
 // *********************************
 // * FUNCTIONS
