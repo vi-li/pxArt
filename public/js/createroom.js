@@ -1,4 +1,4 @@
-const serverUrl = "pxart.herokuapp.com";
+const serverUrl = "pxart.fly.dev";
 
 var socket = io.connect();
 var websiteDomain = `${serverUrl}/`;
