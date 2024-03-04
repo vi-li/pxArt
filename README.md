@@ -2,7 +2,7 @@
 
 Collaborative pixel art!
 
-pxArt.us
+pxart.fly.dev
 
 <p>An interesting hello world:</p>
 <img src="assets/helloWorld.jpg" alt="hello world on canvas" width="200px" height="auto">
